@@ -1,0 +1,6 @@
+<Game rules>
+1. The Pickup action is successful only when every required cooperating agent executes Pickup for the same food in the same environment step. In a task whose rules say all agents must cooperate, the required group is the whole team.
+2. The Pickup action of a food is successful only if the sum of the levels of the agents in that same simultaneous Pickup group is equal to or higher than the level of the food.
+3. Every agent in the simultaneous Pickup group must be at Manhattan distance exactly 1 from that food. Being assigned to a food, moving toward it, or being close to a different food is not sufficient.
+4. Success Condition: All food are picked up before {time_steps} steps.
+</Game rules>

@@ -1,0 +1,25 @@
+def planning_function(processed_state):
+    """
+    Assign one valid high-level task to every agent using the current LBF state.
+
+    Args:
+        processed_state: A tuple (food_info, agents_info).
+            food_info maps each food_id to None when collected, or to
+            (food_position, food_level) while the food is available.
+            agents_info maps each agent_id to (agent_position, agent_level).
+
+    Returns:
+        dict: A task for every agent_id in agents_info. Each task must be one of:
+            - "No op"
+            - "Pickup"
+            - "Target food <index>", where food_<index> exists and is not collected.
+
+        Infer the number of agents and foods from processed_state. Do not hard-code
+        the task for two agents, three agents, two foods, or three foods. Use current
+        positions, not planned assignments, to detect proximity. For a required
+        cooperative group: send every member to the same food until all members are
+        at Manhattan distance 1 and their total level is sufficient; then return
+        "Pickup" for every member in that same call. Never split a group that the
+        game rules require to cooperate.
+    """
+    return llm_tasks

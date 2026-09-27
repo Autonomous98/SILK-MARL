@@ -1,0 +1,11 @@
+<lbf_planning_contract>
+This contract is binding for planning_function. It defines behavior, not merely advice. Infer agent ids, food ids, positions, levels, and remaining foods from processed_state; do not hard-code a fixed team size or food count.
+
+1. Read the game rules before assigning tasks. If they require all agents to cooperate, the required Pickup group is every currently active agent. Do not distribute that group over different foods.
+2. Choose one uncollected food k for a required group. While any required member is not at Manhattan distance exactly 1 from food k, return "Target food k" for every member of that group.
+3. When every required member is at Manhattan distance exactly 1 from food k and the sum of their levels is at least the food level, return "Pickup" for every member of that group in the same planning call. Pickup is a synchronized joint action, not an individual action.
+4. Determine proximity only from agents_info positions and food_info positions. Do not infer proximity from a previous target assignment, a nearest-food list, or an intended task. A target assignment is not evidence that an agent arrived.
+5. Do not return "No op" for an active required member while an uncollected food remains, except when the game rules make that member unnecessary for a legal group. Do not return "Pickup" until the positional and level conditions hold.
+
+Required behavioral example: if all required agents are adjacent to food k and their combined level reaches food k's level, the result must map every required agent to "Pickup". A plan that assigns each agent to a different food in this state is invalid.
+</lbf_planning_contract>

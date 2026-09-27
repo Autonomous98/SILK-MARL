@@ -1,0 +1,16 @@
+# Core dependencies used by the three reported tasks. The original training
+# environment was not exported as a lockfile; install compatible versions.
+cloudpickle
+dashscope
+gymnasium
+hydra-core
+lbforaging
+matplotlib
+numpy
+openai
+pettingzoo[mpe]
+pygame
+PyYAML
+sacred
+tensorboard-logger
+torch

@@ -1,0 +1,10 @@
+<different scenario_think>
+1. Select a currently available food and determine the smallest legal Pickup group from the game rules. When the rules require all agents, select one shared target food for the whole team.
+2. Before every required teammate is adjacent to that shared target, every required teammate should receive "Target food k" for the same k. Do not use their planned tasks as evidence that they have arrived.
+3. Use only the current positions in processed_state to test adjacency. When every required teammate is at Manhattan distance 1 from the same target and their total level is sufficient, every required teammate must choose "Pickup" in that same step.
+4. If the game rules explicitly permit independent collection by separate legal groups, choose groups that reduce unnecessary travel. Otherwise, never split a required cooperative group across foods.
+5. After a food is collected, select another available food for the next legal group, or choose No op only when no work remains.
+6. All foods have been collected, so every agent should choose No op.
+
+Infer the number of agents and foods from processed_state. The strategy must work for both 2-agent/2-food and 3-agent/3-food cooperative LBF tasks without hard-coded agent or food counts.
+</different scenario_think>

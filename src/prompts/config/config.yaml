@@ -1,0 +1,30 @@
+defaults:
+- _self_
+#- env: rware_tiny_2ag_v2
+- env: mpe_simple_spread_v3_3
+- override hydra/output: local
+
+#model: gpt-4-turbo
+#model: gpt-4o
+# model: gpt-4o-2024-08-06
+model: qwen-turbo
+save_raw: True
+
+# --- Experiment 3: multi-LLM candidate generation ---
+# When true, codeGeneration.py generates candidate0/1/2 auxiliary modules
+# instead of overwriting the default Experiment 1/2 modules.
+exp3_generate_candidates: False
+knowledge_candidate_id: -1
+# Number of LLM self-repair attempts for generated mapping functions before fallback.
+exp3_mapping_repair_attempts: 2
+# Number of LLM self-repair attempts for generated difference_credit_fn before fallback.
+exp3_credit_repair_attempts: 2
+exp3_candidate_models:
+- qwen3.7-flash
+- qwen3.7-plus
+- qwen3.8-flash
+
+# Optional verifier model used by tools/verify_exp3_candidates.py.
+exp3_verifier_model: qwen3.8-max
+
+
