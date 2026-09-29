@@ -1,4 +1,4 @@
-# SILK-MARL: Screening and Injecting Multi-LLM Knowledge for Multi-Agent Reinforcement Learning
+# SILK-MARL: Selective Multi-LLM Knowledge Augmentation for Cooperative Multi-Agent Reinforcement Learning
 
 Research-code release for candidate generation, verification, short-run screening, training, and evaluation on three tasks:
 
